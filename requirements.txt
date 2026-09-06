@@ -1,0 +1,34 @@
+# Direct dependencies for DocChat (pinned to the versions tested in this project's venv)
+# Core app
+streamlit==1.55.0
+python-dotenv==1.2.2
+httpx==0.28.1
+
+# LangChain (legacy 0.1.x stack used by app.py)
+langchain==0.1.20
+langchain-classic==1.0.3          # provides langchain.chains + langchain.memory
+langchain-community==0.0.38       # loaders + Chroma vectorstore wrapper
+langchain-core==0.1.53
+langchain-text-splitters==0.0.2
+
+# Vector store
+chromadb==1.5.5
+
+# Document loaders
+pypdf==6.9.2                      # PDF (PyPDFLoader)
+docx2txt==0.9                     # Word (.docx) — required by Docx2txtLoader
+python-pptx==1.0.2                # PowerPoint (UnstructuredPowerPointLoader)
+openpyxl==3.1.5                   # Excel (UnstructuredExcelLoader)
+unstructured==0.18.32             # PPT/Excel loader support
+
+# Utilities pulled in by the stack but pinned for reproducibility
+numpy==1.26.4
+pandas==2.3.3
+requests==2.32.5
+tqdm==4.67.3
+tiktoken==0.12.0
+tenacity==8.5.0
+PyYAML==6.0.3
+
+# Semantic cache (local embeddings) — added for in-app semantic cache at threshold 0.92
+sentence-transformers==2.7.0
